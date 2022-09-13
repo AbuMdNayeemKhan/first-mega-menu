@@ -1,0 +1,151 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: tahoma;
+}
+
+.mega{
+    background-color: maroon;
+    &-wrapper{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        &-logo{
+            h1{
+                a{
+                    padding: 0;
+                    margin: 0;
+                    text-decoration: none;
+                    color: #ffffff;
+                    justify-content: center;
+                    align-items: center;
+                    display: flex;
+                    min-height: 50px;
+                }
+            }
+        }
+        &-menu{
+            ul{
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                gap: 30px;
+                li{
+                    list-style-type: none;
+                    a{
+                        text-decoration: none;
+                        text-transform: uppercase;
+                        color: #ffffff;
+                        padding: 15px;
+                        display: block;
+                        transition: 1s;
+                    }
+                }
+            }
+            &-togoller{
+                position: relative;
+            }
+            &-dropdown{
+                position: absolute;
+                display: none;
+                background-color: maroon;
+                width: 400px;
+                display: flex;
+                justify-content: space-between;
+                margin-left: -150px;
+                height: 0px;
+                overflow: hidden;
+                &.active{
+                    height: auto;
+                }
+                ul{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0;
+                    li{
+                        a{}
+                    }
+                }
+            }
+        }
+        &-togoller{
+            display: none;
+        }
+    }
+}
+
+//==========Responsive design start here==========//
+@media (max-width: 767.98px) { 
+    *{
+
+    }
+    
+    .mega{
+
+        &-wrapper{
+            position: relative;
+            &-logo{
+                h1{
+                    a{
+
+                    }
+                }
+            }
+            &-menu{
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: maroon;
+            height: 100vh;
+            margin-left: -100%;
+            &.show{
+                margin: 0;
+            }
+                ul{
+                    flex-direction: column;
+                    gap: 0;
+                    li{
+
+                        a{
+
+                            &:hover{
+
+                            }
+                        }
+                    }
+                }
+                &-togoller{
+
+                }
+                &-dropdown{
+                    flex-direction: row;
+                    width: 100%;
+                    margin: 0;
+                    background-color: #0DAA8C;
+                    &.active{
+
+                    }
+                    ul{
+                        li{
+                            
+                            a{}
+                        }
+                    }
+                }
+            }
+            &-togoller{
+                display: block;
+                &-btn{
+                    img{
+                        height: 36px;
+                        width: 36px;
+                    }
+                }
+            }
+        }
+    }
+}
